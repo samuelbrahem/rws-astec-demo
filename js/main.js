@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                entry.target.classList.contains('slide-solutions') ||
                                entry.target.classList.contains('slide-roi') ||
                                entry.target.classList.contains('slide-strategy') ||
-                               entry.target.classList.contains('slide-team') ||
                                entry.target.classList.contains('slide-next-steps') ||
                                entry.target.classList.contains('slide-value');
                 nav.classList.toggle('nav-dark', isDark);
