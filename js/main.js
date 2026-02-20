@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.classList.add('slide-visible');
 
                 // Update nav appearance
-                const isDark = entry.target.classList.contains('slide-clients') ||
-                               entry.target.classList.contains('slide-understanding') ||
+                const isDark = entry.target.classList.contains('slide-understanding') ||
                                entry.target.classList.contains('slide-solutions') ||
                                entry.target.classList.contains('slide-roi') ||
                                entry.target.classList.contains('slide-strategy') ||

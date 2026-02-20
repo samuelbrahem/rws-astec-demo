@@ -199,98 +199,115 @@ body {
 .solution-card:nth-child(6) { transition-delay: 0.6s; }
 
 /* ============================================
-   SLIDE 1: Hero
+   SLIDE 1: Hero (Polyglass-style layout)
    ============================================ */
 .slide-hero {
-    background: linear-gradient(135deg, #250143 0%, #3E016F 40%, #5a1d8e 70%, #8353FD 100%);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    background: linear-gradient(160deg, #1a0033 0%, #2d0050 30%, #3E016F 60%, #4a1080 100%);
     color: #fff;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
 }
 
-.hero-overlay {
+.hero-bg {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at 20% 80%, rgba(230, 0, 84, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(131, 83, 253, 0.2) 0%, transparent 50%);
+        radial-gradient(ellipse at 30% 70%, rgba(131, 83, 253, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 30%, rgba(230, 0, 84, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
+.hero-logo-area {
+    position: absolute;
+    top: 48px;
+    left: 60px;
+    z-index: 2;
 }
 
 .hero-logo {
-    height: 60px;
+    height: 72px;
     width: auto;
     filter: brightness(0) invert(1);
-    margin-bottom: 48px;
 }
 
 .hero-title-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
-    padding: 48px 80px;
-    margin-bottom: 48px;
-    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #1a1a1a;
+    padding: 64px 80px;
+    z-index: 2;
+    min-width: 480px;
+    text-align: right;
 }
 
 .hero-title-card h1 {
-    font-size: 3.2rem;
-    font-weight: 800;
+    font-size: 2.8rem;
+    font-weight: 900;
     letter-spacing: -0.02em;
     line-height: 1.2;
+    color: #1a1a1a;
 }
 
 .hero-title-card .company-name {
-    background: linear-gradient(90deg, #E60054, #8353FD);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: 3.8rem;
+    font-size: 3.4rem;
+    color: #1a1a1a;
+    margin-top: 16px;
 }
 
 .hero-presenters {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 24px 32px;
     display: flex;
-    gap: 32px;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.presenter-row {
+    display: flex;
+    gap: 40px;
 }
 
 .presenter {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 16px 24px;
     text-align: left;
+    min-width: 180px;
 }
 
 .presenter strong {
     display: block;
     font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 4px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: #fff;
 }
 
 .presenter em {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
     font-style: italic;
 }
 
-.hero-date {
+.hero-rws-mark {
     position: absolute;
-    bottom: 80px;
-    right: 60px;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 14px;
-    font-weight: 500;
+    bottom: 32px;
+    right: 40px;
+    z-index: 2;
+}
+
+.hero-mark-img {
+    height: 28px;
+    width: auto;
+    opacity: 0.7;
 }
 
 .scroll-indicator {
@@ -299,18 +316,19 @@ body {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
     transition: opacity 0.5s ease;
+    z-index: 2;
 }
 
 .scroll-arrow {
-    width: 20px;
-    height: 20px;
-    border-right: 2px solid rgba(255, 255, 255, 0.5);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    width: 16px;
+    height: 16px;
+    border-right: 2px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
     transform: rotate(45deg);
-    margin: 10px auto 0;
+    margin: 8px auto 0;
     animation: bounce 2s infinite;
 }
 
@@ -491,13 +509,6 @@ body {
     margin-top: 4px;
 }
 
-/* ============================================
-   SLIDE 4: Clients
-   ============================================ */
-.slide-clients {
-    background: #f8f8f8;
-}
-
 .slide-title-dark {
     font-size: 2.2rem;
     font-weight: 800;
@@ -523,35 +534,8 @@ body {
     margin-bottom: 16px;
 }
 
-.client-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 16px;
-}
-
-.client-logo-item {
-    background: #fff;
-    border: 1px solid #e8e8e8;
-    border-radius: 12px;
-    padding: 24px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #555;
-    text-align: center;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    letter-spacing: 0.02em;
-}
-
-.client-logo-item:hover {
-    border-color: #8353FD;
-    box-shadow: 0 4px 12px rgba(131, 83, 253, 0.1);
-}
-
 /* ============================================
-   SLIDE 5: Understanding Astec
+   SLIDE 4: Understanding Astec
    ============================================ */
 .slide-understanding {
     background: #fff;
@@ -1407,12 +1391,21 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .client-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
     .teams-container {
         grid-template-columns: 1fr;
+    }
+
+    .hero-title-card {
+        min-width: 380px;
+        padding: 48px 48px;
+    }
+
+    .hero-title-card h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-title-card .company-name {
+        font-size: 2.6rem;
     }
 }
 
@@ -1437,21 +1430,51 @@ body {
         display: none;
     }
 
+    /* Hero mobile */
+    .hero-logo-area {
+        top: 24px;
+        left: 24px;
+    }
+
+    .hero-logo {
+        height: 48px;
+    }
+
     .hero-title-card {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        min-width: auto;
         padding: 32px 24px;
+        margin: 120px 24px 0 auto;
+        max-width: 80%;
     }
 
     .hero-title-card h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .hero-title-card .company-name {
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     .hero-presenters {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin: 24px;
         flex-direction: column;
-        align-items: center;
+        gap: 12px;
+    }
+
+    .presenter-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-rws-mark {
+        display: none;
     }
 
     .slide-title-large {
@@ -1520,10 +1543,6 @@ body {
 
     .astec-divisions {
         grid-template-columns: 1fr;
-    }
-
-    .client-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
 
     .team-grid {
