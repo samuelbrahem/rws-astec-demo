@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.2 });
 
     // Observe animatable elements
-    document.querySelectorAll('.agenda-item, .stat-bubble, .discovery-card, .solution-card, .roi-item, .strategy-pillar, .value-card, .step-item, .team-card, .collab-feature').forEach(el => {
+    document.querySelectorAll('.agenda-item, .stat-bubble, .discovery-card, .solution-card, .roi-item, .strategy-pillar, .value-card, .step-item, .team-card, .collab-feature, .ai-card').forEach(el => {
         animateOnScroll.observe(el);
     });
 
